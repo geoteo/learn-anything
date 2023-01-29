@@ -8,9 +8,11 @@ Code structure is:
 prisma -- db (Prisma)
  ├─ schema.prisma -- data model
 src -- front end (Solid + tRPC)
+ ├─ routes -- file system routes
+ ├─ server -- tRPC functions to fetch or input data to db
 ```
 
-Front end is built with [Solid](https://www.solidjs.com) on top of [Solid Start](https://github.com/solidjs/solid-start) and [Create JD app](https://github.com/OrJDev/create-jd-app).
+Front end is built with [Solid](https://www.solidjs.com) on top of [Solid Start](https://github.com/solidjs/solid-start) and [Create JD app](https://github.com/OrJDev/create-jd-app). It uses [tRPC](https://trpc.io/) for calling functions that run on backend directly from front end, all typed.
 
 Data lives in Postgres hosted with [Supabase](https://supabase.com/), managed by [Prisma](https://www.prisma.io/).
 
