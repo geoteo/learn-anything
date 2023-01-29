@@ -5,9 +5,9 @@
 Code structure is:
 
 ```
-prisma -- db
- ├─ schema.prisma -- data model described
-src -- front end (with Solid)
+prisma -- db (Prisma)
+ ├─ schema.prisma -- data model
+src -- front end (Solid + tRPC)
 ```
 
 Front end is built with [Solid](https://www.solidjs.com) on top of [Solid Start](https://github.com/solidjs/solid-start) and [Create JD app](https://github.com/OrJDev/create-jd-app).
@@ -23,9 +23,11 @@ pnpm run dev
 
 Open http://localhost:3000.
 
+To open Prisma studio, run `pnpm prisma studio`.
+
 ## DB Model
 
-Model is defined in [model.ts](db/models/model.ts) file.
+Model is defined in [model.ts](prisma/schema.prisma) file.
 
 The current thinking is to basically translate [this wiki](https://wiki.nikiv.dev) into LA fully.
 
@@ -46,8 +48,3 @@ In future the model will be more complex to include more features but above shou
 If above interested you, join our [Discord](https://discord.gg/bxtD8x6aNF). We can discuss how you can best help out.
 
 There are currently closed off issues done in [Height](https://height.app) as it's nicer tool than GitHub issues to manage. For time being at least.
-
-In near future, I want to:
-
-- Integrate [NextAuth](https://next-auth.js.org) so there are users
-- Have nice way to call into API. Ideally with [tRPC](https://trpc.io/) although not sure how to make it work with ChiselStrike
