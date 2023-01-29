@@ -16,16 +16,18 @@ Data lives in Postgres hosted with [Supabase](https://supabase.com/), managed by
 
 ## Quick Start
 
-Assuming you have [pnpm](https://pnpm.io).
+Create `.env` file. Copy contents of [.env.example](.env.example) file into it. `GITHUB_ID` and `GITHUB_SECRET` are found when creating [new GitHub OAuth app](https://github.com/settings/developers). `DATABASE_URL` can be pointed to [local Postgres instance](https://www.prisma.io/docs/concepts/database-connectors/postgresql).
+
+Then to run, using [pnpm](https://pnpm.io).
 
 ```
 pnpm i
-pnpm run dev
+pnpm dev
 ```
 
 Open http://localhost:3000.
 
-To open Prisma studio, run `pnpm prisma studio`.
+To open Prisma studio to see the data, run `pnpm prisma studio`.
 
 ## DB Model
 
