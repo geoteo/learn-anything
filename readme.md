@@ -12,6 +12,8 @@ src -- front end (Solid + tRPC)
 
 Front end is built with [Solid](https://www.solidjs.com) on top of [Solid Start](https://github.com/solidjs/solid-start) and [Create JD app](https://github.com/OrJDev/create-jd-app).
 
+Data lives in Postgres hosted with [Supabase](https://supabase.com/), managed by [Prisma](https://www.prisma.io/).
+
 ## Quick Start
 
 Assuming you have [pnpm](https://pnpm.io).
