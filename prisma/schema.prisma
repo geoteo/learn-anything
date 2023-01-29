@@ -41,6 +41,7 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
+  topics        Topic[]
 }
 
 model VerificationToken {
@@ -54,12 +55,17 @@ model VerificationToken {
 model Topic {
   id      String @id @default(cuid())
   content String
+  link    Link[]
+  userId  String
+  user    User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model Link {
-  id    String @id @default(cuid())
-  url   String
-  title String
+  id      String @id @default(cuid())
+  url     String
+  title   String
+  topicId String
+  topic   Topic  @relation(fields: [topicId], references: [id], onDelete: Cascade)
 }
 
 model Note {
