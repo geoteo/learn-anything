@@ -1,8 +1,7 @@
 import { router } from "../utils"
-import example from "./example"
+import test from "./test"
 
 export const appRouter = router({
-  example,
+  test,
 })
-
 export type IAppRouter = typeof appRouter
