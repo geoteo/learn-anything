@@ -1,16 +1,16 @@
-import { SolidAuth, type SolidAuthConfig } from "@auth/solid-start";
-import Github from "@auth/core/providers/github";
-import { PrismaAdapter } from "@next-auth/prisma-adapter";
-import { serverEnv } from "~/env/server";
-import { prisma } from "~/server/db/client";
+import { SolidAuth, type SolidAuthConfig } from "@auth/solid-start"
+import Github from "@auth/core/providers/github"
+import { PrismaAdapter } from "@next-auth/prisma-adapter"
+import { serverEnv } from "~/env/server"
+import { prisma } from "~/server/db/client"
 
 export const authOpts: SolidAuthConfig = {
   callbacks: {
     session({ session, user }) {
       if (session.user) {
-        session.user.id = user.id;
+        session.user.id = user.id
       }
-      return session;
+      return session
     },
   },
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -26,10 +26,10 @@ export const authOpts: SolidAuthConfig = {
   session: {
     strategy: "database",
     generateSessionToken: () => {
-      return crypto.randomUUID();
+      return crypto.randomUUID()
     },
   },
   debug: false,
-};
+}
 
-export const { GET, POST } = SolidAuth(authOpts);
+export const { GET, POST } = SolidAuth(authOpts)

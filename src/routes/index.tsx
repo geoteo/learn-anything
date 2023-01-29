@@ -1,14 +1,14 @@
-import styles from "./index.module.css";
-import { type VoidComponent, Suspense } from "solid-js";
-import { A, Head, Title, Meta, Link } from "solid-start";
-import { trpc } from "~/utils/trpc";
-import { signOut, signIn } from "@auth/solid-start/client";
-import { createServerData$ } from "solid-start/server";
-import { getSession } from "@auth/solid-start";
-import { authOpts } from "./api/auth/[...solidauth]";
+import styles from "./index.module.css"
+import { type VoidComponent, Suspense } from "solid-js"
+import { A, Head, Title, Meta, Link } from "solid-start"
+import { trpc } from "~/utils/trpc"
+import { signOut, signIn } from "@auth/solid-start/client"
+import { createServerData$ } from "solid-start/server"
+import { getSession } from "@auth/solid-start"
+import { authOpts } from "./api/auth/[...solidauth]"
 
 const Home: VoidComponent = () => {
-  const hello = trpc.example.hello.useQuery(() => ({ name: "from tRPC" }));
+  const hello = trpc.example.hello.useQuery(() => ({ name: "from tRPC" }))
   return (
     <>
       <Head>
@@ -55,13 +55,13 @@ const Home: VoidComponent = () => {
         </div>
       </main>
     </>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
 
 const AuthShowcase: VoidComponent = () => {
-  const sessionData = createSession();
+  const sessionData = createSession()
   return (
     <div class={styles.authContainer}>
       <p class={styles.showcaseText}>
@@ -76,11 +76,11 @@ const AuthShowcase: VoidComponent = () => {
         {sessionData() ? "Sign out" : "Sign in"}
       </button>
     </div>
-  );
-};
+  )
+}
 
 const createSession = () => {
   return createServerData$(async (_, event) => {
-    return await getSession(event.request, authOpts);
-  });
-};
+    return await getSession(event.request, authOpts)
+  })
+}
