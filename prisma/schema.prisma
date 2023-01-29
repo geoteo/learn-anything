@@ -55,7 +55,8 @@ model VerificationToken {
 model Topic {
   id      String @id @default(cuid())
   content String
-  link    Link[]
+  links   Link[]
+  notes   Note[]
   userId  String
   user    User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
@@ -72,4 +73,6 @@ model Note {
   id      String @id @default(cuid())
   content String
   url     String
+  topicId String
+  topic   Topic  @relation(fields: [topicId], references: [id], onDelete: Cascade)
 }
