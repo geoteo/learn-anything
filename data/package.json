@@ -1,0 +1,11 @@
+{
+  "name": "data",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "bun-types": "^0.4.0"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.7.1"
+  }
+}
